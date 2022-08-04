@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "eLearning",
+    "slug": "eLearning",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

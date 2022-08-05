@@ -5,6 +5,7 @@ import { useFonts, Roboto_700Bold, Roboto_900Black, Roboto_400Regular } from '@e
 import { THEME } from './src/styles/theme';
 
 import { Loading } from './src/components/Controllers/Loading';
+import { Walkthrough } from './src/pages/Walkthrough';
 import { Routes } from './src/routes';
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
                 backgroundColor="#000000"
                 translucent
             />
-            {fontsLoaded ? <Routes /> : <Loading />}
+            {fontsLoaded ? <Walkthrough /> : <Loading />}
         </NativeBaseProvider>
     );
 }

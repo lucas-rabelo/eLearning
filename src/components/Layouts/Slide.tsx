@@ -5,6 +5,7 @@ import {
     HStack,
     Button
 } from 'native-base';
+import { Dimensions } from 'react-native';
 
 import WomamWorkImg from '../../assets/images/work.png';
 
@@ -14,8 +15,12 @@ interface Props {
 }
 
 export function Slide({ title, text }: Props) {
+
+    const { width } = Dimensions.get('window');
+
     return (
         <VStack
+            w={width}
             pt={10}
             px={5}
         >
@@ -48,30 +53,6 @@ export function Slide({ title, text }: Props) {
                 ml={-5}
                 mt={3}
             />
-
-            <HStack
-                justifyContent="flex-end"
-                mt={5}
-            >
-                <Button
-                    py={5}
-                    px={6}
-                    mr={-5}
-                    style={{
-                        borderBottomLeftRadius: 40,
-                        borderTopLeftRadius: 40,
-                    }}
-                    rounded="none"
-                    bg="green.400"
-                >
-                    <Text
-                        mr={5}
-                        fontSize={20}
-                        fontFamily="body"
-                        color="white"
-                    >Next</Text>
-                </Button>
-            </HStack>
         </VStack>
     );
 }

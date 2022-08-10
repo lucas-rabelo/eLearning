@@ -1,9 +1,12 @@
-import { VStack } from 'native-base';
+import { VStack, Text } from 'native-base';
 
 export function Categorie() {
     return (
-        <VStack>
-
+        <VStack
+            flex={1}
+            py={10}
+        >
+            <Text>Categorie</Text>
         </VStack>
     );
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeClosed } from 'phosphor-react-native';
 import { TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -39,6 +40,7 @@ export function RegisterForm() {
     const [showPassword, setShowPassword] = useState(false);
     const [type, setType] = useState(null);
 
+    const navigation = useNavigation();
     const {
         control,
         handleSubmit,
@@ -53,7 +55,8 @@ export function RegisterForm() {
                 return Alert.alert("Warning", "Please, select one type for your access")
             }
 
-            Alert.alert("Success", "You are allowed to enter")
+            // Alert.alert("Success", "You are allowed to enter")
+            navigation.navigate('Walkthrough');
 
         } catch (error) {
             console.log(error)
@@ -79,7 +82,7 @@ export function RegisterForm() {
                 />
                 <FormControl
                     w="85%"
-                    isInvalid={errors.email || errors.password ? true : false}
+                    isInvalid={errors.name || errors.email || errors.password ? true : false}
                 >
                     <FormControl.Label>Name</FormControl.Label>
                     <InputForm

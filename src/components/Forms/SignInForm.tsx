@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeClosed } from 'phosphor-react-native';
 import { TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -35,6 +36,7 @@ export function SignInForm() {
 
     const [showPassword, setShowPassword] = useState(false);
 
+    const navigation = useNavigation();
     const {
         control,
         handleSubmit,
@@ -45,7 +47,8 @@ export function SignInForm() {
 
     function handleSignIn(form: FormData) {
         try {
-
+            // alert('Logado');
+            navigation.navigate('Walkthrough');
         } catch (error) {
             console.log(error)
         }

@@ -23,7 +23,7 @@ export default function App() {
                 backgroundColor="#000000"
                 translucent
             />
-            {fontsLoaded ? <Walkthrough /> : <Loading />}
+            {fontsLoaded ? <Routes /> : <Loading />}
         </NativeBaseProvider>
     );
 }

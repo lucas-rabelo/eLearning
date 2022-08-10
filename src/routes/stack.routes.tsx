@@ -10,7 +10,7 @@ const { Navigator, Screen } = createNativeStackNavigator();
 export default function App() {
     return (
         <Navigator
-            initialRouteName="SignIn"
+            initialRouteName="Walkthrough"
             screenOptions={{
                 headerShown: false,
             }}

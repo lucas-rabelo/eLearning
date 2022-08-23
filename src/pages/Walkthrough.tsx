@@ -1,9 +1,8 @@
 import { Button, FlatList, Text, VStack } from 'native-base';
 import { useRef, useState } from 'react';
-import { Animated, Dimensions } from 'react-native';
+import { Animated } from 'react-native';
 
 import { Slide } from '../components/Layouts/Slide';
-import { Paginator } from '../components/Layouts/Paginator';
 import { useNavigation } from '@react-navigation/native';
 
 const slides = [
@@ -38,8 +37,8 @@ export function Walkthrough() {
 
     const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
 
-    const scrollTo = () => {
-        if(currentIndex < slides.length - 1) {
+    function scrollTo() {
+        if (currentIndex < slides.length - 1) {
             slideRef.current.scrollToIndex({ index: currentIndex + 1 });
         } else {
             navigation.navigate('Categorie');
@@ -72,28 +71,28 @@ export function Walkthrough() {
                 )}
             />
 
-                <Button
-                    position="absolute"
-                    bottom={16}
-                    right={0}
-                    w={'30%'}
-                    py={5}
-                    px={6}
-                    style={{
-                        borderBottomLeftRadius: 40,
-                        borderTopLeftRadius: 40,
-                    }}
-                    rounded="none"
-                    bg="green.400"
-                    onPress={scrollTo}
-                >
-                    <Text
-                        mr={5}
-                        fontSize={20}
-                        fontFamily="body"
-                        color="white"
-                    >Next</Text>
-                </Button>
+            <Button
+                position="absolute"
+                bottom={16}
+                right={0}
+                w={'30%'}
+                py={5}
+                px={6}
+                style={{
+                    borderBottomLeftRadius: 40,
+                    borderTopLeftRadius: 40,
+                }}
+                rounded="none"
+                bg="green.400"
+                onPress={scrollTo}
+            >
+                <Text
+                    mr={5}
+                    fontSize={20}
+                    fontFamily="body"
+                    color="white"
+                >Next</Text>
+            </Button>
         </VStack>
     );
 }

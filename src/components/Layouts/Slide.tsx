@@ -2,8 +2,7 @@ import {
     VStack,
     Text,
     Image,
-    HStack,
-    Button
+    useColorModeValue
 } from 'native-base';
 import { Dimensions } from 'react-native';
 
@@ -29,7 +28,7 @@ export function Slide({ title, text }: Props) {
                 mt={20}
                 fontSize="4xl"
                 fontFamily="heading"
-                color="black"
+                color={useColorModeValue('black', 'white')}
             >
                 {title}
             </Text>
@@ -39,7 +38,7 @@ export function Slide({ title, text }: Props) {
                 mt={14}
                 fontSize="md"
                 fontFamily="mono"
-                color="black"
+                color={useColorModeValue('black', 'white')}
             >
                 {text}
             </Text>

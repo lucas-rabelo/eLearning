@@ -1,4 +1,4 @@
-import { Button, FlatList, Text, VStack } from 'native-base';
+import { Button, FlatList, Text, VStack, useColorModeValue } from 'native-base';
 import { useRef, useState } from 'react';
 import { Animated } from 'react-native';
 
@@ -48,6 +48,7 @@ export function Walkthrough() {
     return (
         <VStack
             flex={3}
+            bg={useColorModeValue('white', 'gray.900')}
         >
             <FlatList
                 data={slides}
